@@ -1,11 +1,11 @@
 **Deploy ganglia monitoring system on ubuntu 16.04**
-###### Cluster Config
+##### Cluster Config
 ```
 Master Node: 192.168.2.156
 Slave Node: 192.168.2.156 192.168.2.177 192.168.2.46
 ```
 
-###### Master Deploy
+##### Master Deploy
 1. Install Lamp stack
 ```
 sudo apt-get install apache2 mariadb-server php7.0 libapache2-mod-php7.0 php7.0-mbstring php7.0-curl php7.0-zip php7.0-gd php7.0-mysql php7.0-curl php7.0-mcrypt
@@ -63,14 +63,14 @@ sudo systemctl status gmetad.service
 sudo systemctl restart apache2.service
 ```
 
-###### Node Deploy
-- Install monitor
+##### Node Deploy
+1. Install monitor
 ```
 sudo apt-get install ganglia-monitor
 copy /etc/ganglia/gmond.conf from master node
 ```
 
-- Add gpu metrics
+2. Add gpu metrics
 ```
 sudo cp -r conf.d /etc/ganglia
 sudo cp graph.d/*  /usr/share/ganglia-webfrontend/graph.d/
@@ -78,14 +78,14 @@ sudo pip install nvidia-ml-py
 sudo cp -r python_modules /usr/lib/ganglia
 ```
 
-- Restart related service
+3. Restart related service
 ```
 sudo systemctl restart ganglia-monitor.service
 ```
 
-###### Dashboard
+##### Dashboard
 [http://192.168.2.156/ganglia/]http://192.168.2.156/ganglia/)
 
-###### Reference
+##### Reference
 [https://github.com/ganglia/gmond_python_modules/tree/master/gpu/nvidia](https://github.com/ganglia/gmond_python_modules/tree/master/gpu/nvidia)
 [https://hostpresto.com/community/tutorials/how-to-install-and-configure-ganglia-monitor-on-ubuntu-16-04/](https://hostpresto.com/community/tutorials/how-to-install-and-configure-ganglia-monitor-on-ubuntu-16-04/)
