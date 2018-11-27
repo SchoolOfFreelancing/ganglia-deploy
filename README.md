@@ -84,7 +84,7 @@ sudo systemctl restart ganglia-monitor.service
 ```
 
 ##### Dashboard
-[http://192.168.2.156/ganglia/]http://192.168.2.156/ganglia/)
+[http://192.168.2.156/ganglia/](http://192.168.2.156/ganglia/)
 
 ##### Reference
 [https://github.com/ganglia/gmond_python_modules/tree/master/gpu/nvidia](https://github.com/ganglia/gmond_python_modules/tree/master/gpu/nvidia)
